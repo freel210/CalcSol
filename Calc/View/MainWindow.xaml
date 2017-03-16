@@ -1,0 +1,207 @@
+﻿<Window x:Class="Calc.View.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="Calculator" Height="244" Width="422" ResizeMode="NoResize">
+    <Window.Resources>
+        <Style x:Key="ButtonStyle" TargetType="Button">
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="{x:Type Button}">
+                        <Grid>
+                            <Ellipse Fill="{TemplateBinding Background}"  
+                             Stroke="OrangeRed" StrokeThickness="1"/>
+                            <ContentPresenter HorizontalAlignment="Center"
+                                              VerticalAlignment="Center"/>
+                        </Grid>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+            <Style.Triggers>
+                <EventTrigger RoutedEvent="Button.Click">
+                    <EventTrigger.Actions>
+                        <BeginStoryboard>
+                            <Storyboard>
+                                <ColorAnimationUsingKeyFrames Storyboard.TargetProperty ="(Border.Background).(SolidColorBrush.Color)">
+                                    <LinearColorKeyFrame 
+                                                        KeyTime="0:0:0" 
+                                                        Value="OrangeRed"/>
+                                    <LinearColorKeyFrame 
+                                                        KeyTime="0:0:0.4" 
+                                                        Value="White"/>
+                                </ColorAnimationUsingKeyFrames>
+                            </Storyboard>
+                        </BeginStoryboard>
+                    </EventTrigger.Actions>
+                </EventTrigger>
+            </Style.Triggers>
+        </Style>
+
+        <Style x:Key="ButtonStyleT" TargetType="Button">
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="{x:Type Button}">
+                        <Grid>
+                            <Ellipse Fill="{TemplateBinding Background}"  
+                             Stroke="OrangeRed" StrokeThickness="1"/>
+                            <ContentPresenter HorizontalAlignment="Center"
+                                              VerticalAlignment="Center"/>
+                        </Grid>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+
+        <Style x:Key="ControlButtonStyle" TargetType="Button">
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="{x:Type Button}">
+                        <Grid>
+                            <Ellipse Fill="{TemplateBinding Background}"  
+                             Stroke="OrangeRed" StrokeThickness="1"/>
+                            <ContentPresenter HorizontalAlignment="Center"
+                                              VerticalAlignment="Center"/>
+                        </Grid>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+            <Style.Triggers>
+                <EventTrigger RoutedEvent="Button.Click">
+                    <EventTrigger.Actions>
+                        <BeginStoryboard>
+                            <Storyboard>
+                                <ColorAnimationUsingKeyFrames Storyboard.TargetProperty ="(Border.Background).(SolidColorBrush.Color)">
+                                    <LinearColorKeyFrame 
+                                                        KeyTime="0:0:0" 
+                                                        Value="White"/>
+                                    <LinearColorKeyFrame 
+                                                        KeyTime="0:0:0.4" 
+                                                        Value="OrangeRed"/>
+                                </ColorAnimationUsingKeyFrames>
+                            </Storyboard>
+                        </BeginStoryboard>
+                    </EventTrigger.Actions>
+                </EventTrigger>
+            </Style.Triggers>
+        </Style>
+
+        <Style x:Key="OperationButtonStyle" TargetType="Button">
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="{x:Type Button}">
+                        <Grid>
+                            <Ellipse Fill="{TemplateBinding Background}"  
+                             Stroke="OrangeRed" StrokeThickness="1"/>
+                            <ContentPresenter HorizontalAlignment="Center"
+                                              VerticalAlignment="Center"/>
+                        </Grid>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+
+    </Window.Resources>
+
+    <Window.InputBindings>
+        <KeyBinding Command="{Binding Path=TypeCommand}" CommandParameter="0" Key="NumPad0"/>
+        <KeyBinding Command="{Binding Path=TypeCommand}" CommandParameter="0" Key="D0"/>
+
+        <KeyBinding Command="{Binding Path=TypeCommand}" CommandParameter="1" Key="NumPad1"/>
+        <KeyBinding Command="{Binding Path=TypeCommand}" CommandParameter="1" Key="D1"/>
+
+        <KeyBinding Command="{Binding Path=TypeCommand}" CommandParameter="2" Key="NumPad2"/>
+        <KeyBinding Command="{Binding Path=TypeCommand}" CommandParameter="2" Key="D2"/>
+
+        <KeyBinding Command="{Binding Path=TypeCommand}" CommandParameter="3" Key="NumPad3"/>
+        <KeyBinding Command="{Binding Path=TypeCommand}" CommandParameter="3" Key="D3"/>
+
+        <KeyBinding Command="{Binding Path=TypeCommand}" CommandParameter="4" Key="NumPad4"/>
+        <KeyBinding Command="{Binding Path=TypeCommand}" CommandParameter="4" Key="D4"/>
+
+        <KeyBinding Command="{Binding Path=TypeCommand}" CommandParameter="5" Key="NumPad5"/>
+        <KeyBinding Command="{Binding Path=TypeCommand}" CommandParameter="5" Key="D5"/>
+
+        <KeyBinding Command="{Binding Path=TypeCommand}" CommandParameter="6" Key="NumPad6"/>
+        <KeyBinding Command="{Binding Path=TypeCommand}" CommandParameter="6" Key="D6"/>
+
+        <KeyBinding Command="{Binding Path=TypeCommand}" CommandParameter="7" Key="NumPad7"/>
+        <KeyBinding Command="{Binding Path=TypeCommand}" CommandParameter="7" Key="D7"/>
+
+        <KeyBinding Command="{Binding Path=TypeCommand}" CommandParameter="8" Key="NumPad8"/>
+        <KeyBinding Command="{Binding Path=TypeCommand}" CommandParameter="8" Key="D8"/>
+
+        <KeyBinding Command="{Binding Path=TypeCommand}" CommandParameter="9" Key="NumPad9"/>
+        <KeyBinding Command="{Binding Path=TypeCommand}" CommandParameter="9" Key="D9"/>
+
+        <KeyBinding Command="{Binding Path=TypeCommand}" CommandParameter="," Key="Decimal"/>
+        <KeyBinding Command="{Binding Path=TypeCommand}" CommandParameter="," Key="OemComma"/>
+
+        <KeyBinding Command="{Binding Path=SetOperatorCommand}" CommandParameter="plus" Key="Add"/>
+        <KeyBinding Command="{Binding Path=SetOperatorCommand}" CommandParameter="plus" Key="OemPlus"/>
+
+        <KeyBinding Command="{Binding Path=SetOperatorCommand}" CommandParameter="minus" Key="Subtract"/>
+        <KeyBinding Command="{Binding Path=SetOperatorCommand}" CommandParameter="minus" Key="OemMinus"/>
+
+        <KeyBinding Command="{Binding Path=SetOperatorCommand}" CommandParameter="division" Key="Divide"/>
+
+        <KeyBinding Command="{Binding Path=SetOperatorCommand}" CommandParameter="multiply" Key="Multiply"/>
+
+        <KeyBinding Command="{Binding Path=ClearCommand}" Key="Escape"/>
+
+        <KeyBinding Command="{Binding Path=ChangeActiveStringCommand}" Key="Tab"/>
+
+    </Window.InputBindings>
+    
+    <Window.Style>
+        <Style TargetType="Window">
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="{x:Type Window}">
+                        <Grid>
+                            <Rectangle Fill="{TemplateBinding Background}"  
+                             Stroke="OrangeRed" StrokeThickness="1"/>
+                            <ContentPresenter HorizontalAlignment="Center"
+                                              VerticalAlignment="Center"/>
+                        </Grid>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+    </Window.Style>
+
+    <Grid >
+        <Label Name="lbl1" HorizontalAlignment="Left" Height="23" Margin="16,11,0,0" Content="{Binding Path=FirstString}" VerticalAlignment="Top" Width="228" HorizontalContentAlignment="Right" Background="{Binding Path=FirstStringColor, Mode=TwoWay}">
+            <Label.InputBindings>
+                <MouseBinding Command="{Binding Path=SetFirstStringActiveCommand}" MouseAction="LeftClick"/>
+            </Label.InputBindings>
+        </Label>
+
+        <Label Name="lbl2" HorizontalAlignment="Left" Height="23" Margin="16,39,0,0" Content="{Binding Path=SecondString}" VerticalAlignment="Top" Width="228" HorizontalContentAlignment="Right" Background="{Binding Path=SecondStringColor, Mode=TwoWay}">
+            <Label.InputBindings>
+                <MouseBinding Command="{Binding Path=SetSecondStringActiveCommand}" MouseAction="LeftClick"/>
+            </Label.InputBindings>
+        </Label>
+
+        <Label Name="lblr" HorizontalAlignment="Left"  Content="{Binding Path=ResultString}" VerticalAlignment="Top" HorizontalContentAlignment="Right" BorderBrush="OrangeRed" BorderThickness="0 2 0 0" Height="36" Margin="16,67,0,0"  Width="228" FontSize="16" />
+
+        <Button Content="CE/C" HorizontalAlignment="Left" Height="40" Margin="16,108,0,0" VerticalAlignment="Top" Width="40" Command="{Binding Path=ClearCommand}" Background="OrangeRed" Foreground="White" Style="{StaticResource ControlButtonStyle}"/>
+
+        <Button Content="+" HorizontalAlignment="Left" Height="40" Margin="94,108,0,0" VerticalAlignment="Top" Width="40" Style="{StaticResource OperationButtonStyle}" Background="{Binding Path=PlusOperatorButtonColor}" Command="{Binding Path=SetOperatorCommand}" CommandParameter="plus"/>
+        <Button Content="-" HorizontalAlignment="Left" Height="40" Margin="139,108,0,0" VerticalAlignment="Top" Width="40" Style="{StaticResource OperationButtonStyle}" Background="{Binding Path=MinusOperatorButtonColor}" Command="{Binding Path=SetOperatorCommand}" CommandParameter="minus"/>
+        <Button Content="/" HorizontalAlignment="Left" Height="40" Margin="184,108,0,0" VerticalAlignment="Top" Width="40" Style="{StaticResource OperationButtonStyle}" Background="{Binding Path=DivisionOperatorButtonColor}" Command="{Binding Path=SetOperatorCommand}" CommandParameter="division"/>
+        <Button Content="*" HorizontalAlignment="Left" Height="40" Margin="94,153,0,0" VerticalAlignment="Top" Width="40" Style="{StaticResource OperationButtonStyle}" Background="{Binding Path=MultiplyOperatorButtonColor}" Command="{Binding Path=SetOperatorCommand}" CommandParameter="multiply"/>
+        <Button Content="&#x221A;" HorizontalAlignment="Left" Height="40" Margin="139,153,0,0" VerticalAlignment="Top" Width="40"  Style="{StaticResource OperationButtonStyle}" Background="{Binding Path=SquareOperatorButtonColor}" Command="{Binding Path=SetOperatorCommand}" CommandParameter="square"/>
+        <Button Content="%" HorizontalAlignment="Left" Height="40" Margin="184,153,0,0" VerticalAlignment="Top" Width="40"  Style="{StaticResource OperationButtonStyle}" Background="{Binding Path=PercentOperatorButtonColor}" Command="{Binding Path=SetOperatorCommand}" CommandParameter="percent"/>
+
+        <Button Content="7" HorizontalAlignment="Left" Height="40" Margin="276,7,0,0" VerticalAlignment="Top" Width="40" Command="{Binding Path=TypeCommand}" CommandParameter="{Binding RelativeSource={RelativeSource Self}, Path=Content}" Background="{Binding Path=Button7Color}" Style="{StaticResource ButtonStyleT}" />
+        <Button Content="8" HorizontalAlignment="Left" Height="40" Margin="321,7,0,0" VerticalAlignment="Top" Width="40" Command="{Binding Path=TypeCommand}" CommandParameter="{Binding RelativeSource={RelativeSource Self}, Path=Content}" Background="White" Style="{StaticResource ButtonStyle}"/>
+        <Button Content="9" HorizontalAlignment="Left" Height="40" Margin="366,7,0,0" VerticalAlignment="Top" Width="40" Command="{Binding Path=TypeCommand}" CommandParameter="{Binding RelativeSource={RelativeSource Self}, Path=Content}" Background="White" Style="{StaticResource ButtonStyle}"/>
+        <Button Content="4" HorizontalAlignment="Left" Height="40" Margin="276,53,0,0" VerticalAlignment="Top" Width="40" Command="{Binding Path=TypeCommand}" CommandParameter="{Binding RelativeSource={RelativeSource Self}, Path=Content}" Background="White" Style="{StaticResource ButtonStyle}"/>
+        <Button Content="5" HorizontalAlignment="Left" Height="40" Margin="321,53,0,0" VerticalAlignment="Top" Width="40" Command="{Binding Path=TypeCommand}" CommandParameter="{Binding RelativeSource={RelativeSource Self}, Path=Content}" Background="White" Style="{StaticResource ButtonStyle}"/>
+        <Button Content="6" HorizontalAlignment="Left" Height="40" Margin="366,52,0,0" VerticalAlignment="Top" Width="40" Command="{Binding Path=TypeCommand}" CommandParameter="{Binding RelativeSource={RelativeSource Self}, Path=Content}" Background="White" Style="{StaticResource ButtonStyle}"/>
+        <Button Content="1" HorizontalAlignment="Left" Height="40" Margin="276,98,0,0" VerticalAlignment="Top" Width="40" Command="{Binding Path=TypeCommand}" CommandParameter="{Binding RelativeSource={RelativeSource Self}, Path=Content}" Background="White" Style="{StaticResource ButtonStyle}"/>
+        <Button Content="2" HorizontalAlignment="Left" Height="40" Margin="321,98,0,0" VerticalAlignment="Top" Width="40" Command="{Binding Path=TypeCommand}" CommandParameter="{Binding RelativeSource={RelativeSource Self}, Path=Content}" Background="White" Style="{StaticResource ButtonStyle}"/>
+        <Button Content="3" HorizontalAlignment="Left" Height="40" Margin="366,98,0,0" VerticalAlignment="Top" Width="40" Command="{Binding Path=TypeCommand}" CommandParameter="{Binding RelativeSource={RelativeSource Self}, Path=Content}" Background="White" Style="{StaticResource ButtonStyle}"/>
+        <Button Content="0" HorizontalAlignment="Left" Height="40" Margin="276,143,0,0" VerticalAlignment="Top" Width="85" Command="{Binding Path=TypeCommand}" CommandParameter="{Binding RelativeSource={RelativeSource Self}, Path=Content}" Background="White" Style="{StaticResource ButtonStyle}"/>
+        <Button Content="," HorizontalAlignment="Left" Height="40" Margin="366,143,0,0" VerticalAlignment="Top" Width="40" Command="{Binding Path=TypeCommand}" CommandParameter="{Binding RelativeSource={RelativeSource Self}, Path=Content}" Background="White" Style="{StaticResource ButtonStyle}"/>
+    </Grid>
+</Window>

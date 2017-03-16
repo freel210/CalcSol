@@ -1,0 +1,26 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2012
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Calc", "Calc\Calc.csproj", "{7363C2DE-3527-41CB-BE0B-6087F79357BA}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WpfControls", "WpfControls\WpfControls.csproj", "{70C657A0-00DE-4C58-AA80-965C6562498C}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{7363C2DE-3527-41CB-BE0B-6087F79357BA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7363C2DE-3527-41CB-BE0B-6087F79357BA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7363C2DE-3527-41CB-BE0B-6087F79357BA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7363C2DE-3527-41CB-BE0B-6087F79357BA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{70C657A0-00DE-4C58-AA80-965C6562498C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{70C657A0-00DE-4C58-AA80-965C6562498C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{70C657A0-00DE-4C58-AA80-965C6562498C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{70C657A0-00DE-4C58-AA80-965C6562498C}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
